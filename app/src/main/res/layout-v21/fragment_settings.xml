@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    tools:context=".MainActivity"
+    >
+
+
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingTop="34sp"
+            android:text="Hôte: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/hôte"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="hote"
+            android:inputType="textUri" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Port: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/port"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="port"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Username"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/NomUtilisateur"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Password"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/MotDePasse"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Device ID: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/deviceID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="device id"
+            android:inputType="numberDecimal" />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Topic: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/topic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="topic"
+            android:inputType="text" />
+        <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:id="@+id/button_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="confirm"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/btn_stop_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="stop" />
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/txtStop"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:padding="12dp"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/connectedOrFailed"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:padding="12dp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/publishing"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:padding="12dp"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
