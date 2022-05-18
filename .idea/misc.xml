@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/33755/AndroidStudioProjects/Falonne/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2355" />
         <entry key="..\:/Users/33755/AndroidStudioProjects/Falonne/app/src/main/res/drawable/ic_baseline_redo_24.xml" value="0.12" />
+        <entry key="..\:/Users/33755/AndroidStudioProjects/Falonne/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.25" />
         <entry key="..\:/Users/33755/AndroidStudioProjects/Falonne/app/src/main/res/drawable/ic_baseline_undo_24.xml" value="0.12" />
         <entry key="..\:/Users/33755/AndroidStudioProjects/Falonne/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2355" />
         <entry key="..\:/Users/33755/AndroidStudioProjects/Falonne/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.118" />
@@ -30,6 +31,10 @@
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/L3/Stage" />
+    <option name="OPTION_SCOPE" value="private" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
     <option name="OPTION_INCLUDE_LIBS" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">

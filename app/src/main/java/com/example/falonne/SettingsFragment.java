@@ -1,5 +1,6 @@
 package com.example.falonne;
 
+
 import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Build;
@@ -12,16 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.falonne.databinding.FragmentSettingsBinding;
-import com.example.falonne.SettingsFragment;
-import com.google.android.gms.location.FusedLocationProviderClient;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
@@ -45,6 +42,7 @@ public class SettingsFragment extends Fragment {
     public static EditText getName() {
         return name;
     }
+
 
     public static EditText name = null;
 
@@ -98,7 +96,7 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        hote = (EditText) view.findViewById(R.id.hôte);
+        hote = (EditText) view.findViewById(R.id.hote);
         name = (EditText) view.findViewById(R.id.NomUtilisateur);
         passw = (EditText) view.findViewById(R.id.MotDePasse);
         por = (EditText) view.findViewById(R.id.port);

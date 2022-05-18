@@ -43,7 +43,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
 public class ForegroundService extends Service implements LocationListener, com.google.android.gms.location.LocationListener{
