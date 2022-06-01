@@ -2,6 +2,7 @@ package com.example.falonne;
 
 import android.os.Bundle;
 
+import android.view.Menu;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "No action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
     @Override
     public boolean onSupportNavigateUp() {

@@ -159,15 +159,15 @@ public class ForegroundService extends Service implements LocationListener, com.
             //Vérification toutes les 10 secondes (10000 millisecondes ) si la position change
             //d'au moins 10 mètres. Si c'est le cas, l'écouteur (instance de MajListener)
             //va etre averti
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0,  this);  //alors on s'abonne aux events
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 6,  this);  //alors on s'abonne aux events
 
         }
         if (locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER))  {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 5,  this);  //alors on s'abonne aux events
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 6,  this);  //alors on s'abonne aux events
 
         }
         if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))  {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 5,  this);  //alors on s'abonne aux events
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 15000, 6,  this);  //alors on s'abonne aux events
 
         }
     }
@@ -214,9 +214,7 @@ public class ForegroundService extends Service implements LocationListener, com.
         this.latitude = location.getLatitude();
         this.longitude = location.getLongitude();
 
-        // lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 40000, 2, this);  //alors on s'abonne aux events
-
-        Toast.makeText(this, "Location: " + latitude + "/" + longitude, Toast.LENGTH_LONG).show();  //déclanche un toast à chaque fois qu'on a une localisation
+        //Toast.makeText(this, "Location: " + latitude + "/" + longitude, Toast.LENGTH_LONG).show();  //déclanche un toast à chaque fois qu'on a une localisation
         if(client !=null && client.isConnected()){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 publish();
@@ -233,13 +231,13 @@ public class ForegroundService extends Service implements LocationListener, com.
             //create a list of lat and long values
             JSONArray lonLatValue = new JSONArray(new double[]{latitude, longitude});
             //create a list of variable lat and long
-            JSONArray value_units = new JSONArray(new String[]{"Lat", "Lag"});
+            JSONArray value_units = new JSONArray(new String[]{"lat", "lon"});
 
             //use to read the deviceID of the phone
 
             publishMessage.put("unitID", deviseID);
-            publishMessage.put("Value", lonLatValue);
-            publishMessage.put("Value-Units", value_units);
+            publishMessage.put("value", lonLatValue);
+            publishMessage.put("value_units", value_units);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -271,8 +269,6 @@ public class ForegroundService extends Service implements LocationListener, com.
 
     public void init(){
         Sname = SettingsFragment.getName().getText().toString();
-
-        // Sname = MainActivity.name.getText().toString();
         Spassw = SettingsFragment.getPassw().getText().toString();
         Shot = SettingsFragment.getHot().getText().toString();
         Spor = SettingsFragment.getPor().getText().toString();
@@ -280,48 +276,29 @@ public class ForegroundService extends Service implements LocationListener, com.
 
         client = new MqttAndroidClient(getApplicationContext(), "tcp://" + Shot + ":" + Spor, IDClient);
 
-        Toast.makeText(getBaseContext(), "name :" + Sname, Toast.LENGTH_LONG).show();
-        Log.d("name : ", Sname);
-        Log.d("hot : ", Shot);
-        Log.d("port : ", Spor);
-        Log.d("password : ", Spassw);
-
-
         MqttConnectOptions options = new MqttConnectOptions();
 
         options.setCleanSession(false);
-        if (Sname == null) {
-            Toast.makeText(getBaseContext(), "Please enter Username !", Toast.LENGTH_LONG).show();
-        } else if (Spassw == null) {
-            Toast.makeText(getBaseContext(), "Please enter Password !", Toast.LENGTH_LONG).show();
-
-        } else {
-            options.setUserName(Sname);
-            options.setPassword(Spassw.toCharArray());
-        }
-
+        options.setUserName(Sname);
+        options.setPassword(Spassw.toCharArray());
         client.setCallback(new MqttCallbackExtended() {
             @Override
             public void connectComplete(boolean reconnect, String serverURI) {
-                Toast.makeText(getBaseContext(), " URL:" + serverURI, Toast.LENGTH_LONG).show();
-
+               // Toast.makeText(getBaseContext(), " URL:" + serverURI, Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void connectionLost(Throwable cause) {
                 Toast.makeText(getBaseContext(), " connectionLost :" + cause.getMessage(), Toast.LENGTH_LONG).show();
-
             }
 
             @Override
             public void messageArrived(String Stopic, MqttMessage message) throws Exception {
                 Toast.makeText(getBaseContext(), " messageArrived:" + message.toString(), Toast.LENGTH_LONG).show();
-
             }
 
             @Override
             public void deliveryComplete(IMqttDeliveryToken token) {
-
             }
 
         });
@@ -350,13 +327,5 @@ public class ForegroundService extends Service implements LocationListener, com.
             Toast.makeText(getBaseContext(), "exception " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
-
-        Toast.makeText(getBaseContext(), "lolllll", Toast.LENGTH_LONG).show();
-
     }
-
-
-
-
-
 }

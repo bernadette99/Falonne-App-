@@ -10,7 +10,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Welcome to the Falonne application of the Neocampus icu team. \n\n" +
+        mText.setValue("Welcome to the  application named 'Falonne' of the Neocampus icu team. \n\n" +
                 "Its purpose is to send the GPS coordinates of the phone in the MQTT protocol that you will specify in the Settings part.\n\n\n" +
                 "Attention!!!! you must first activate the localization and the access to the phone of this application.\n\n\n" +
                 "Please leave the device ID part empty!");

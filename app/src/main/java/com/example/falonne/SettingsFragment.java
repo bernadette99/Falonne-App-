@@ -11,19 +11,38 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.falonne.databinding.ActivityMainBinding;
 import com.example.falonne.databinding.FragmentSettingsBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 
 
+
+
+import android.view.Menu;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+import com.example.falonne.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 public class SettingsFragment extends Fragment {
 
     private FragmentSettingsBinding binding;
@@ -80,7 +99,8 @@ public class SettingsFragment extends Fragment {
     public static MqttAndroidClient client;
     String IDClient = MqttClient.generateClientId();
 
-
+    private AppBarConfiguration mAppBarConfiguration;
+    private ActivityMainBinding bindinng;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         SettingsViewModel settingsViewModel =
@@ -92,6 +112,7 @@ public class SettingsFragment extends Fragment {
 
         return root;
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -137,7 +158,6 @@ public class SettingsFragment extends Fragment {
 
         view.findViewById(R.id.button_start).setOnClickListener(listener);
         view.findViewById(R.id.btn_stop_update).setOnClickListener(listener);
-
 
 
 
